@@ -12,7 +12,8 @@ fun main() {
     val airHumidityToday = 20
     val seasonToday = "winter"
 
-    val favorableConditions = ((SUNNY_WEATHER == sunnyWeatherToday) && (OPEN_TENT == openTentToday) && (AIR_HUMIDITY == airHumidityToday) && (SEASON == seasonToday))
+    val favorableConditions =
+        ((SUNNY_WEATHER == sunnyWeatherToday) && (OPEN_TENT == openTentToday) && (AIR_HUMIDITY == airHumidityToday) && (SEASON == seasonToday))
 
     println("Благоприятные ли условия сейчас для роста бобовых? $favorableConditions")
 }
