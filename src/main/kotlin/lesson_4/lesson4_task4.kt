@@ -1,17 +1,20 @@
 package org.example.lesson_4
 
 fun main() {
-    val handExercises = 1
-    val absExercises = 1
-    val legExercises = 0
-    val backExercises = 0
+    val trainingDay = 5
+    val isArmAndAbsExercisesDay = (trainingDay % 2 == 1)
 
-    val trainingDay = 6
+    val handExercises = isArmAndAbsExercisesDay
+    val absExercises = isArmAndAbsExercisesDay
+    val legExercises = !isArmAndAbsExercisesDay
+    val backExercises = !isArmAndAbsExercisesDay
 
-    println("""
-        Упражнения для рук:    ${trainingDay % 2 == handExercises}
-        Упражнения для ног:    ${trainingDay % 2 == legExercises}
-        Упражнения для спины:  ${trainingDay % 2 == backExercises}
-        Упражнения для пресса: ${trainingDay % 2 == absExercises}
-    """.trimIndent())
+    println(
+        """
+        Упражнения для рук:    $handExercises
+        Упражнения для ног:    $legExercises
+        Упражнения для спины:  $backExercises
+        Упражнения для пресса: $absExercises
+    """.trimIndent()
+    )
 }
