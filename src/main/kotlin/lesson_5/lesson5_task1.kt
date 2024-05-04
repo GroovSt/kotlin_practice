@@ -1,8 +1,11 @@
 package org.example.lesson_5
 
 fun main() {
-    println("Для того чтобы выяснить, что вы человек, напишите ответ для выражения: 150 + 150")
-    val example = 300
+    val numSumOne = 150
+    val numSumTwo = 150
+
+    println("Для того чтобы выяснить, что вы человек, напишите ответ для выражения: $numSumOne + $numSumTwo")
+    val example = numSumOne + numSumTwo
     val answer = readln().toInt()
 
     if (answer == example)
