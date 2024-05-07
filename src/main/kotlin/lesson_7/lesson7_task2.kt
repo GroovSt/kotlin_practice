@@ -1,11 +1,8 @@
 package org.example.lesson_7
 
-import kotlin.random.Random
-import kotlin.random.nextInt
-
 fun main() {
-    while (true) {
-        val randomCode = Random.nextInt(1000..9999)
+    do {
+        val randomCode = (1000..9999).random()
 
         println("Ваш код авторизации: $randomCode")
 
@@ -15,7 +12,8 @@ fun main() {
         if (randomCode == userCode) {
             println("Добро пожаловать!")
             break
-        } else
+        } else {
             println("Код введён неверно")
-    }
+        }
+    } while (true)
 }
