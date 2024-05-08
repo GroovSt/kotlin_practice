@@ -1,13 +1,13 @@
 package org.example.lesson_9
 
 fun main() {
-    val listIngredientsForOmelet = mutableListOf(2, 50, 15)
+    var listIngredientsForOmelet = mutableListOf(2, 50, 15)
 
     println("Какое количество порций вам необходимо?")
     val numberOfServings = readln().toInt()
 
-    val listOmeletPortions = listIngredientsForOmelet.map { it * numberOfServings }
+    listIngredientsForOmelet = listIngredientsForOmelet.map { it * numberOfServings }.toMutableList()
 
-    println("На $numberOfServings порций вам понадобится: Яиц – ${listOmeletPortions[0]}," +
-            " молока – ${listOmeletPortions[1]}, сливочного масла – ${listOmeletPortions[2]}")
+    println("На $numberOfServings порций вам понадобится: Яиц – ${listIngredientsForOmelet[0]}," +
+            " молока – ${listIngredientsForOmelet[1]}, сливочного масла – ${listIngredientsForOmelet[2]}")
 }
