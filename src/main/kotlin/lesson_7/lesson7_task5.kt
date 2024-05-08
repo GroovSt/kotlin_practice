@@ -1,8 +1,6 @@
 package org.example.lesson_7
 
-import kotlin.random.Random
-import kotlin.random.nextInt
-
+import kotlin.collections.mutableListOf
 
 fun main() {
     println("Введите желаемую длину пароля:")
@@ -12,24 +10,26 @@ fun main() {
         passwordLength = 6
     }
 
-    val generatedPassword = StringBuilder()
+    val generatedPassword = mutableListOf<Any>()
 
-    for (i in 1..passwordLength) {
-        val randomNum = Random.nextInt(0..9)
-        val charRangeLower: CharRange = 'a'..'z'
-        val randomCharLower = charRangeLower.random()
-        val charRangeUpper: CharRange = 'A'..'Z'
-        val randomCharUpper = charRangeUpper.random()
+    val randomNum = (0..9).random()
+    val randomCharLower = ('a'..'z').random()
+    val randomCharUpper = ('A'..'Z').random()
 
-        val randomCall = Random.nextInt(1..3) //Вызов рандомного типа сиволов
+    generatedPassword.add(randomNum)
+    generatedPassword.add(randomCharLower)
+    generatedPassword.add(randomCharUpper)
 
-        if (randomCall == 1)
-            generatedPassword.append(randomNum)
-        else if (randomCall == 2)
-            generatedPassword.append(randomCharLower)
-        else
-            generatedPassword.append(randomCharUpper)
+    for (i in 4..passwordLength) {
+        val randomSymbol = mutableListOf<Any>()
+        randomSymbol.addAll((0..9))
+        randomSymbol.addAll(('a'..'z'))
+        randomSymbol.addAll(('A'..'Z'))
+
+        generatedPassword.add(randomSymbol.random())
     }
 
-    println(generatedPassword)
+    generatedPassword.shuffle()
+
+    println(generatedPassword.joinToString(""))
 }
