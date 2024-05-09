@@ -1,8 +1,8 @@
 package org.example.lesson_10
 
 fun main() {
-    var manThrow = 0
-    var computerThrow = 0
+    var manThrow: Int
+    var computerThrow: Int
 
     do {
         println("Бросает человек!")
