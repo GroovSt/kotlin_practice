@@ -11,34 +11,32 @@ fun main() {
     println("Введите пароль:")
     val userPassword = readln()
 
-    println(
-        getCart(
-            token = getToken(
-                loginForToken = userLogin,
-                passwordForToken = userPassword
-            )
-        )
-    )
+    val token = getToken(userLogin, userPassword)
+    val cart = getCart(token)
+
+    println(cart)
 }
 
 fun getToken(loginForToken: String, passwordForToken: String): String? {
-    val token = StringBuilder()
-    val tokenLength = 32
-    val charset = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789"
+    return if (USERNAME == loginForToken && PASSWORD == passwordForToken) {
+        val tokenLength = 32
+        val charset = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789"
+        val token = StringBuilder()
 
-    if (USERNAME == loginForToken && PASSWORD == passwordForToken) {
         for (i in 0 until tokenLength) {
             token.append(charset.random())
         }
 
-        return token.toString()
-    } else
-        return null
+        token.toString()
+    } else {
+        null
+    }
 }
 
 fun getCart(token: String?): String {
-    if (token != null) {
-        return PRODUCT_LIST.joinToString()
-    } else
-        return "Неудачная авторизация"
+    return if (token != null) {
+        PRODUCT_LIST.joinToString()
+    } else {
+        "Неудачная авторизация"
+    }
 }
