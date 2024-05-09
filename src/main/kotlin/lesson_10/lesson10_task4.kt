@@ -38,7 +38,7 @@ fun startNewRound(): Boolean {
     val userAnswer = readln()
     val newRound: Boolean
 
-    if (userAnswer == "Да" || userAnswer == "да")
+    if (userAnswer.equals("да", ignoreCase = true))
         newRound = true
     else
         newRound = false
