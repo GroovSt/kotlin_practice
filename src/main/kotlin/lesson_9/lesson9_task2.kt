@@ -8,14 +8,12 @@ fun main() {
     println("Желаете добавить еще?")
     val userAnswer = readln()
 
-    if (userAnswer == "да")
+    if (userAnswer.equals("да", ignoreCase = true)) {
         println("Какой ингредиент вы хотите добавить?")
-    else
-        return
+        val userIngredient = readln()
 
-    val userIngredient = readln()
+        listIngredients.add(userIngredient)
 
-    listIngredients.add(userIngredient)
-
-    println("Теперь в рецепте есть следующие ингредиенты: ${listIngredients.joinToString(", ")}")
+        println("Теперь в рецепте есть следующие ингредиенты: ${listIngredients.joinToString(", ")}")
+    }
 }
