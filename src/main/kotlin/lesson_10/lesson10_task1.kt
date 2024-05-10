@@ -24,7 +24,4 @@ fun main() {
 
 }
 
-fun rollTheDice(): Int {
-    val diceRoll = (1..6).random()
-    return diceRoll
-}
+fun rollTheDice(): Int = (1..6).random()
