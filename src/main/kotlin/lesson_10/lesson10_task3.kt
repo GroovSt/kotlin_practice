@@ -9,11 +9,10 @@ fun main() {
 
 fun generatePassword(passLength: Int): String {
     val generatedPassword = StringBuilder()
+    val randomNum = (0..9).random()
+    val randomChar = (32..47).random().toChar()
 
     for (i in 1..passLength) {
-        val randomNum = (0..9).random()
-        val randomChar = "!\"#\$%&'()*+,-./ ".random()
-
         if (i % 2 == 0)
             generatedPassword.append(randomNum)
         else
