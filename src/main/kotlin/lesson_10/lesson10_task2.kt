@@ -1,5 +1,6 @@
 package org.example.lesson_10
 
+const val MIN_LENGTH = 4
 fun main() {
     println("Введите логин:")
     val userLogin = readln()
@@ -16,5 +17,5 @@ fun main() {
 }
 
 fun validateInput(input: String): Boolean {
-    return input.length >= 4
+    return input.length >= MIN_LENGTH
 }
