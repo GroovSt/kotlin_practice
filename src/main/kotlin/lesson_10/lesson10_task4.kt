@@ -7,11 +7,11 @@ fun main() {
 
     do {
         println("Бросает человек!")
-        manThrow = rollTheDice()
+        manThrow = rollTheDice4()
         println("Результат человека: $manThrow!")
 
         println("Бросает компьютер!")
-        computerThrow = rollTheDice()
+        computerThrow = rollTheDice4()
         println("Результат компьютер: $computerThrow!")
 
         if (manThrow > computerThrow) {
@@ -28,7 +28,7 @@ fun main() {
     println("Вы выиграли $counterHumanWin раз!")
 }
 
-fun rollTheDice(): Int {
+fun rollTheDice4(): Int {
     val diceRoll = (1..6).random()
     return diceRoll
 }
