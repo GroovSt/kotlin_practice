@@ -6,11 +6,11 @@ fun main() {
 
     do {
         println("Бросает человек!")
-        manThrow = rollTheDice()
+        manThrow = rollTheDice1()
         println("Результат человека: $manThrow!")
 
         println("Бросает компьютер!")
-        computerThrow = rollTheDice()
+        computerThrow = rollTheDice1()
         println("Результат компьютер: $computerThrow!")
 
         if (manThrow > computerThrow)
@@ -24,4 +24,4 @@ fun main() {
 
 }
 
-fun rollTheDice(): Int = (1..6).random()
+fun rollTheDice1(): Int = (1..6).random()
