@@ -15,6 +15,7 @@ class RecipeCategory(
 class Recipe(
     val recipeName: String,
     val recipeIcon: String,
+    val ingredients: MutableList<Ingredient>,
     val inFavoritesButton: Button,
     val inFavorites: Boolean = false,
     val categoryButton: Button,
