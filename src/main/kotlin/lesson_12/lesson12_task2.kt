@@ -1,6 +1,10 @@
 package org.example.lesson_12
 
-class TheWeather(var dayWeather: Int, var nightWeather: Int, var precipitation: Boolean) {
+class TheWeather(
+    var dayWeather: Int,
+    var nightWeather: Int,
+    var precipitation: Boolean,
+) {
 }
 
 fun main() {
