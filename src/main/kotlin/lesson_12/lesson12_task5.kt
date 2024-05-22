@@ -3,11 +3,10 @@ package org.example.lesson_12
 import kotlin.math.roundToInt
 
 class WeatherSecond(
-    dayWeather: Int,
-    nightWeather: Int,
-    precipitation: Boolean,
+    val dayWeather: Int,
+    val nightWeather: Int,
+    val precipitation: Boolean,
 ) {
-
 }
 
 fun main() {
@@ -16,23 +15,26 @@ fun main() {
     var precipitation: Boolean
 
     val weatherList = mutableListOf<WeatherSecond>()
-    val dayTemp = mutableListOf<Int>()
-    val nightTemp = mutableListOf<Int>()
-    val precipitationDays = mutableListOf<Boolean>()
 
     for (i in 1..30) {
-        dayWeather = (-55..70).random() // 0°C to 40°C
-        nightWeather = (-80..55).random() // -10°C to 20°C
+        dayWeather = (-55..70).random()
+        nightWeather = (-80..55).random()
         precipitation = listOf(true, false).random()
 
         val weather = WeatherSecond(dayWeather, nightWeather, precipitation)
         weatherList.add(weather)
+    }
 
-        dayTemp.add(dayWeather)
-        nightTemp.add(nightWeather)
+    val dayTemp = mutableListOf<Int>()
+    val nightTemp = mutableListOf<Int>()
+    val precipitationDays = mutableListOf<Boolean>()
 
-        if (precipitation == true)
-            precipitationDays.add(precipitation)
+    for (weather in weatherList) {
+        dayTemp.add(weather.dayWeather)
+        nightTemp.add(weather.nightWeather)
+        if (weather.precipitation) {
+            precipitationDays.add(weather.precipitation)
+        }
     }
 
     val avgDayTemp = dayTemp.average().roundToInt()
